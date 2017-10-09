@@ -62,3 +62,5 @@ scraper(
 ## To do
 
 * Make image selectors more flexible (i.e. not have it limited to parent/child searches)
+* Enable selecting and parsing of more than only images
+* Update so scraper can be ran from the CLI rather than just embeded in a function
