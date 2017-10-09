@@ -30,11 +30,11 @@ On each sucesfull approved image write, a callback function will be called, pass
 // 5. callback function returned on each successful save
 
 scraper(
-	urlToScrape,
-	searchParentClass,
-	searchImageClass,
-	permanentSaveDirectory,
-	successfulSaveCallback(savedImageUrl)
+  urlToScrape,
+  searchParentClass,
+  searchImageClass,
+  permanentSaveDirectory,
+  successfulSaveCallback(savedImageUrl)
 );
 
 </pre>
@@ -48,11 +48,11 @@ To run the **command-scraper** in a Node project, simply include the package int
 var scraper = require('command-scraper');
 
 scraper(
-	'http://www.someurl.com',
-	'.imageWrap',
-	'.img',
-	'public/savedImages',
-	function(imageUrl){
+  'http://www.someurl.com',
+  '.imageWrap',
+  '.img',
+  'public/savedImages',
+  function(imageUrl){
     //save to DB
   }
 );
