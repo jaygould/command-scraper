@@ -22,8 +22,7 @@ On each sucesfull approved image write, a callback function will be called, pass
 
 ## The function
 
-{% highlight javascript %}
-
+<pre>
 // 1. URL to scrape
 // 2. parent class to search for
 // 3. image class to search for within parent
@@ -38,13 +37,13 @@ scraper(
 	successfulSaveCallback(savedImageUrl)
 );
 
-{% endhighlight %}
+</pre>
 
 ## Example usage
 
 To run the **command-scraper** in a Node project, simply include the package into a Node instance and run the package. There's no need to set up a server or socket info as all this is done in the package:
 
-{% highlight javascript %}
+<pre>
 
 var scraper = require('command-scraper');
 
@@ -58,7 +57,7 @@ scraper(
   }
 );
 
-{% endhighlight %}
+</pre>
 
 ## To do
 
