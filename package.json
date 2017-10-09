@@ -1,0 +1,37 @@
+{
+	"name": "command-scraper",
+	"version": "1.0.0",
+	"description":
+		"A web image scraper with user approval process in the command line.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jaygould/command-scraper.git"
+	},
+	"keywords": ["scraper", "webscraper", "command"],
+	"author": "Jay Gould <i9055378@googlemail.com> (http://jaygould.co.uk)",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/jaygould/command-scraper/issues"
+	},
+	"homepage": "https://github.com/jaygould/command-scraper#readme",
+	"dependencies": {
+		"chalk": "2.1.0",
+		"cheerio": "1.0.0-rc.2",
+		"connect": "3.6.5",
+		"fs": "0.0.1-security",
+		"http": "0.0.0",
+		"inquirer": "3.3.0",
+		"jimp": "0.2.28",
+		"mkdirp": "0.5.1",
+		"opn": "5.1.0",
+		"path": "0.12.7",
+		"request": "2.83.0",
+		"serve-static": "1.13.1",
+		"shortid": "2.2.8",
+		"socket.io": "2.0.3"
+	}
+}

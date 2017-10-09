@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Command Scraper</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      #wrap{ width: 600px; margin: 50px auto; }
+      h1{ text-align: center; }
+      #img{ display: block; margin: 30px auto; }
+      p{ padding: 5px; text-align: center; font-size: 18px; font-weight: bold; }
+
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+<script>
+const socket = io();
+socket.on('img', url => {
+	let image = document.getElementById('img');
+	image.querySelector('img').src = url.imageUrl;
+	image.querySelector('p').innerHTML = url.imageName;
+});
+</script>
+
+  </head>
+
+  <body>
+    <div id="wrap">
+      <h1>Command Scraper</h1>
+      <div id="img">
+        <img src=""  />
+        <p></p>
+      </div>
+
+    </div>
+
+  </body>
+</html>
