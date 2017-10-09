@@ -6,7 +6,7 @@
 
 ## What it does
 
-The **command-scraper** searches a specified website for images and returns them to the user in web browser window, one-by-one, allowing the user to approve the images via the terminal
+The **command-scraper** searches a specified website for images and returns them to the user in web browser window, one-by-one, allowing the user to approve the images via the terminal.
 
 The app will create a directory called public if one doesn't exist, and have this set as a place to serve static files.
 

@@ -11,7 +11,13 @@
 		"type": "git",
 		"url": "git+https://github.com/jaygould/command-scraper.git"
 	},
-	"keywords": ["scraper", "webscraper", "command"],
+	"keywords": [
+		"scraper",
+		"webscraper",
+		"command",
+		"cli-scraper",
+		"cli scraper"
+	],
 	"author": "Jay Gould <i9055378@googlemail.com> (http://jaygould.co.uk)",
 	"license": "ISC",
 	"bugs": {
