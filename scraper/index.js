@@ -9,6 +9,12 @@ const cheerio = require('cheerio');
 const mkdirp = require('mkdirp');
 const tempDir = 'public/temp';
 
+process.on('SIGINT', function() {
+	emptyTemp().then(() => {
+		process.exit();
+	});
+});
+
 //io: socket inatance passed in from the main index.js file
 
 //req: request object passed in from the main indx.js file which is passed
@@ -67,9 +73,12 @@ let getUserApproval = (remoteUrl, io, req, callback) => {
 	return new Promise((resolve, reject) => {
 		_convertImage(remoteUrl)
 			.then(newUrl => {
+				console.log(newUrl);
 				let urlArr = newUrl.split('public');
 				let absUtl = `http://${req.headers.host}/${urlArr[1]}`;
 				//send image to browser
+				console.log(absUtl);
+
 				io.emit('img', { imageUrl: absUtl, imageName: urlArr[1] });
 
 				//begin user input into terminal

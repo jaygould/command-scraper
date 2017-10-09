@@ -7,15 +7,15 @@ const opn = require('opn');
 const scrape = require('./scraper/index');
 const app = connect();
 
-const port = 3030;
+const port = 3033;
 
 module.exports = (url, parentElement, childElement, permanentDir, callback) => {
 	global.url = url;
 	global.parentElement = parentElement;
 	global.childElement = childElement;
 	global.permanentDir = permanentDir;
-	app.use(serveStatic(__dirname + '/public'));
-
+	app.use(serveStatic(process.cwd() + '/public'));
+	console.log(process.cwd() + '/public');
 	let server = http.createServer(app).listen(port, err => {
 		opn('http://localhost:' + port + '/scrape');
 		if (err) {
