@@ -6,7 +6,7 @@
 
 ## What it does
 
-The **command-scraper** searches a specified website for images and returns them to the user in web browser window, one-by-one, allowing the user to approve the images via the terminal.
+The **command-scraper** searches a specified website for images and returns them to the user in web browser window, one-by-one, allowing the user to approve the images via the terminal which will then produce an action on the approved image (such as save to a database/file system).
 
 The app will create a directory called public if one doesn't exist, and have this set as a place to serve static files.
 
@@ -27,13 +27,15 @@ On each sucesfull approved image write, a callback function will be called, pass
 // 2. parent class to search for
 // 3. image class to search for within parent
 // 4. permanent directory to save scraped image
-// 5. callback function returned on each successful save
+// 5. should the package open a new browser window automatically (true/false)
+// 6. callback function returned on each successful save
 
 scraper(
   urlToScrape,
   searchParentClass,
   searchImageClass,
   permanentSaveDirectory,
+  openNewWindow,
   successfulSaveCallback(savedImageUrl)
 );
 
@@ -52,6 +54,7 @@ scraper(
   '.imageWrap',
   '.img',
   'public/savedImages',
+  true,
   function(imageUrl){
     //save to DB
   }

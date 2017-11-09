@@ -9,6 +9,26 @@ const cheerio = require('cheerio');
 const mkdirp = require('mkdirp');
 const tempDir = 'public/temp';
 
+let emptyTemp = () => {
+	if (fs.existsSync(tempDir)) {
+		return new Promise((resolve, reject) => {
+			fs.readdir(tempDir, (err, files) => {
+				try {
+					if (err) throw err;
+					for (const file of files) {
+						fs.unlink(path.join(tempDir, file), err => {
+							if (err) throw err;
+							resolve();
+						});
+					}
+				} catch (err) {
+					reject(err);
+				}
+			});
+		});
+	}
+};
+
 process.on('SIGINT', function() {
 	emptyTemp().then(() => {
 		process.exit();
@@ -113,24 +133,6 @@ let getUserApproval = (remoteUrl, io, req, callback) => {
 				);
 				console.log(e);
 			});
-	});
-};
-
-let emptyTemp = () => {
-	return new Promise((resolve, reject) => {
-		fs.readdir(tempDir, (err, files) => {
-			try {
-				if (err) throw err;
-				for (const file of files) {
-					fs.unlink(path.join(tempDir, file), err => {
-						if (err) throw err;
-						resolve();
-					});
-				}
-			} catch (err) {
-				reject(err);
-			}
-		});
 	});
 };
 

@@ -9,7 +9,14 @@ const app = connect();
 
 const port = 3033;
 
-module.exports = (url, parentElement, childElement, permanentDir, callback) => {
+module.exports = (
+	url,
+	parentElement,
+	childElement,
+	permanentDir,
+	isLocal,
+	callback
+) => {
 	global.url = url;
 	global.parentElement = parentElement;
 	global.childElement = childElement;
@@ -17,7 +24,9 @@ module.exports = (url, parentElement, childElement, permanentDir, callback) => {
 	app.use(serveStatic(process.cwd() + '/public'));
 	console.log(process.cwd() + '/public');
 	let server = http.createServer(app).listen(port, err => {
-		opn('http://localhost:' + port + '/scrape');
+		if (isLocal) {
+			opn('http://localhost:' + port + '/scrape');
+		}
 		if (err) {
 			return console.log('Error: ', err);
 		}
