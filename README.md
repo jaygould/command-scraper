@@ -16,6 +16,8 @@ On approval of an image, the package will request the image from the temporary d
 
 On each sucesfull approved image write, a callback function will be called, passing in the permanent image URL, so tasks such as DB updates can be made in accordance with the image write.
 
+**Note: currently the app is best ran on a local environment. Updates coming to allow integration with a remote system**.
+
 ## Install
 
 `npm i command-scraper`
@@ -46,6 +48,7 @@ scraper(
 To run the **command-scraper** in a Node project, simply include the package into a Node instance and run the package. There's no need to set up a server or socket info as all this is done in the package:
 
 <pre>
+//scraper.js
 
 var scraper = require('command-scraper');
 
@@ -62,8 +65,13 @@ scraper(
 
 </pre>
 
+Then simply:
+
+`node scraper.js`
+
 ## To do
 
+* Allow process to be ran on remote system (such as Heroku)
 * Make image selectors more flexible (i.e. not have it limited to parent/child searches)
 * Enable selecting and parsing of more than only images
 * Update so scraper can be ran from the CLI rather than just embeded in a function
